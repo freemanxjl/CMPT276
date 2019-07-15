@@ -1,0 +1,36 @@
+
+<h1 class="display-3">Edit link</h1><br/>
+ 
+<%= form_with(model: @link, local: true) do |form| %>
+ 
+  <% if @link.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        The following errors have occured:
+      </h2>
+      <ul>
+        <% @link.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= form.label :URL %><br>
+    <%= form.text_field(:URL, {:class =>'col-md-4 form-control', :placeholder => 'URL'}) %>
+    <small class="form-text text-muted">Remember to include https:// in your URL.</small>
+  </p>
+ 
+  <p>
+    <%= form.label :Description %><br>
+    <%= form.text_area(:Description, {:class =>'form-control', :placeholder => 'Description', :rows => 6}) %>
+  </p>
+ 
+  <p>
+    <%= form.submit({:class => "btn btn-success"}) %>
+  </p>
+  
+  <% end %>
+ 
+  <%= link_to 'Back', link_path %>

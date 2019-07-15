@@ -1,0 +1,73 @@
+<!-- Layout design from : https://v4-alpha.getbootstrap.com/examples/jumbotron/ -->
+
+<body class = welcomepage>
+
+<!DOCTYPE html>
+<br/><br/>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Jumbotron Template for Bootstrap</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+  </head>
+
+  <body>
+  	
+    <!-- This is the main big rectangle that displays main information about our service. Includes login and register button XOR sign out button -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">Welcome to SHARE </center></h1>
+        <p>A service oriented in centralizing all your projects into one place. Access, share and upload your links, projects and files through URLs or connect to Google Drive and Dropbox directly. Create groups to collaborate with others while also headers to organize, categorize and rearrange files.</p>
+        <%if current_user %>
+		<left><button type="button"><%= link_to 'Sign out', destroy_user_session_path, method: :delete%></button></left>
+		<% else %>
+		<left><button style="margin:10px;" type="button"><%= link_to 'Register', new_user_registration_path %></button></left>
+		<left><button type="button"><%= link_to 'Login', new_user_session_path %></button></left>
+		<% end %>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Link</h2>
+          <p>Use SHARE to link URLS from all your projects in an easy and straightforward way. For other uses, you may link your favourite websites to use SHARE as a cloud bookmarking system. </p>
+        </div>
+        <div class="col-md-4">
+          <h2>Categorize</h2>
+          <p>Create and name your categories to insert and oranize your links based on your own needs. Create multiple categories to access and organize all your different projects. </p>
+       </div>
+        <div class="col-md-4">
+          <h2>Collaborate</h2>
+          <p>Share your categories with others to collaborate or for others to view. Set different options to allow other users to edit or insert more URLS or simply just view the category. </p>
+        </div>
+      </div><br/>
+
+      <hr>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
