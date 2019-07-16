@@ -1,4 +1,4 @@
-<!-- Filter code from: https://www.w3schools.com/bootstrap4/bootstrap_filters.asp -->
+  <!-- Filter code from: https://www.w3schools.com/bootstrap4/bootstrap_filters.asp -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +38,7 @@
       <% @links.each do |link| %>
         <tr>
           <br/>
-          <td id = "urls"><a href='<%= link.URL.html_safe %>'><%= link.Description %></a>
+          <td id = "urls"><a href='<%= link.URL.html_safe %>' target="_blank"=><%= link.Description %></a>
           <small class="form-text text-muted"><%= link.URL.html_safe %></small></td>
          <td><div class="dropdown">
             <button type="button" class="dropdown-toggle" data-toggle="dropdown">Options</button>
